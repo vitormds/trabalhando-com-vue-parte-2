@@ -7,6 +7,7 @@
 <p v-on:mousemove="atualizarXY"> Mouse: {{ x }} e {{ y }}</p>
 <p v-on:mousemove.stop=""> Parar aqui!!</p>
 <a v-on:click.prevent="naoNavegar" href="http://google.com.br">Google</a>
+<input type="text" v-on:keyup.enter="exibirAlerta">
 
 </div>
 
@@ -32,9 +33,11 @@
             //     event.stopPropagation()
             // },
             naoNavegar(event){
-                console.log("acionado");
+                console.log("acionado ");
+            },
+            exibirAlerta(event){
+                alert("Estou te alertando")
             }
-
             
         }
     })
