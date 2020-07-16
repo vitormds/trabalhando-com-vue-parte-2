@@ -1,0 +1,29 @@
+<!-- O v-show mostra os elementos e consome menos processamento, 
+     o v-if remove e adiciona elementos na dom, consome mais e é mais seguro além de ter else e else if-->
+<meta charset="utf-8">
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <template v-if="logado">
+        <p>Usuário logado {{Maria}}</p>
+        <p>Perfil do usuário: Admin</p>
+    </template>
+    <p v-else-if="anonimo">Navegando como Anônimo</p>
+    <p v-else>Nenhum usuário logado</p>    
+    <button @click="logado = !logado">{{logado ? 'Sair' : 'Entrar'}}</button>
+    <input type="checkbox" v-model="anonimo">
+    <hr>
+    <footer v-show="logado">
+        Desenvolvido para você!
+    </footer>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            nome: 'Maria',
+            logado: false,
+            anonimo: false
+        }
+    });
+</script>
+
