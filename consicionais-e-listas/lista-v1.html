@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+     <script src="https://unpkg.com/vue"></script>
+     <div id="app">
+         <ul>
+            <li v-for="cor in cores">{{cor}}</li>
+         </ul>
+         <hr>
+         <footer v-show="logado">
+             Desenvolvido para você!
+         </footer>
+     </div>
+     <script>
+         new Vue({
+             el: '#app',
+             data: {
+                cores:['Verde', 'Amarelo', 'Azul', 'Rosa']
+             }
+         });
+     </script>
+     
+     
