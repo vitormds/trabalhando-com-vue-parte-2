@@ -1,7 +1,10 @@
 <meta charset="utf-8">
 <script src="https://unpkg.com/vue"></script>
 <div id="app">
-    <p v-if="logado">Usuário logado {{Maria}}</p>
+    <template v-if="logado">
+        <p>Usuário logado {{Maria}}</p>
+        <p>Perfil do usuário: Admin</p>
+    </template>
     <p v-else-if="anonimo">Navegando como Anônimo</p>
     <p v-else>Nenhum usuário logado</p>    
     <button @click="logado = !logado">{{logado ? 'Sair' : 'Entrar'}}</button>
